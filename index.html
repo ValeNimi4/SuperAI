@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    img {
+        transition: width 5s, height 5s;}
+    img:hover {width: 200px; height: 200px}
+    * {
+        text-align: center;}
+    b {
+    font-size: 20px;}
+    p {
+      color: gray;
+      font-family: monospace;
+      font-size: 15px;
+      transition: color 1s;
+    }
+    p:hover {color: white;}
+    body {
+      background-color: black;
+    }
+    h2, h4 {
+        font-family: monospace;
+        text-align: center;
+        color: white;}
+    button {
+        font-family: monospace;
+        color: black;
+        background: lightgreen;
+        transition: background 1s, color 1.5s;}
+    button:hover{background: blue; color: white}
+    input {
+        font-family: monospace;
+        color: white;
+        background: black;}
+  </style>
+  <title>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</title>
+</head>
+<body>
+  <img src="pildid/SuperAI.png" width=50 height=50 id="pilt">
+  <h2 id='nimi'>SuperAI</h2>
+  <h4>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</h4>
+  <p id="tekst"></p>
+  <input id="sisestus">
+  <button onclick='vasta();'>Saada</button><br>
+  <i style='font-size: 12px; color: darkgrey;'>Tegi <a href='https://valeNimi4.github.io'>valeNimi4</a>. Copyleft🄯 valeNimi4 2024-2025. Originaalse AI leiate <a href=https://ValeNimi4.github.io/KalaAI/esimene.html>siit</a></i>
+  <script>var kord = 0;</script>
+  <script>
+    function vasta() {
+      if (kord == 0) {document.getElementById('tekst').innerHTML = "<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>";}
+      kord++;
+      document.getElementById('nimi').innerHTML = "KalaAI";
+      document.getElementById('pilt').src = "pildid/KalaAI.png";
+      document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<br>' + document.getElementById('sisestus').value + '<br>';
+      document.getElementById('sisestus').value = '';
+      var a = Math.floor(Math.random() * 100);
+      for (var i = 0; i < a; i++) {
+         document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<b>mull </b>'
+      }
+    }
+  </script>
+</body>
+</html>
