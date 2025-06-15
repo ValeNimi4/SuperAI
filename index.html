@@ -55,7 +55,9 @@
       document.getElementById('sisestus').value = '';
       var a = Math.floor(Math.random() * 100);
       for (var i = 0; i < a; i++) {
-         document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<b>mull </b>'
+         if (Math.floor(Math.random * 2) == 1) {
+           var mull = "<b>mull </b>";} else {var mull = "<b>sulps </b>";}
+         document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + mull;
       }
     }
   </script>
