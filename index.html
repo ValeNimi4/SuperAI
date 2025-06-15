@@ -2,6 +2,22 @@
 <html>
 <head>
   <style>
+  	@keyframes kiri {
+    	0% {color: white;}
+        25% {color: lightgreen;}
+        50% {color: lightblue;}
+        75% {color: yellow;}
+        100% {color: white;}}
+    #nimi {
+    	animation-name: kiri;
+        animation-duration: 10s;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;}
+  	div {position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;}
+  	a {color: lightblue;}
     img {
         transition: width 5s, height 5s;}
     img:hover {width: 200px; height: 200px}
@@ -10,7 +26,7 @@
     b {
     font-size: 20px;}
     p {
-      color: gray;
+      color: lightgray;
       font-family: monospace;
       font-size: 15px;
       transition: color 1s;
@@ -27,13 +43,19 @@
         font-family: monospace;
         color: black;
         background: lightgreen;
-        transition: background 1s, color 1.5s;}
+        transition: background 1s, color 1.5s;
+        border-radius: 25px;
+        border-style: none;
+		}
     button:hover{background: blue; color: white}
     input {
         font-family: monospace;
         color: white;
         background: black;
-        width: 80%;}
+        width: 80%;
+        border-radius: 25px;
+        border-color: white;
+        border-style: dotted;}
   </style>
   <title>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</title>
 </head>
@@ -42,9 +64,11 @@
   <h2 id='nimi'>SuperAI</h2>
   <h4>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</h4>
   <p id="tekst"></p>
+  <div>
   <input id="sisestus">
-  <button onclick='vasta();'>Saada</button><br>
-  <i style='font-size: 12px; color: darkgrey;'>Tegi <a href='https://valeNimi4.github.io'>valeNimi4</a>. Copyleft🄯 valeNimi4 2024-2025. Originaalse AI leiate <a href=https://ValeNimi4.github.io/KalaAI/esimene.html>siit</a></i>
+  <button onclick='vasta();'>→</button><br>
+    <i style='font-size: 12px; color: darkgrey;'>Tegi <a href='https://valeNimi4.github.io'>valeNimi4</a>. Copyleft🄯 valeNimi4 2024-2025. Originaalse AI leiate <a href=https://ValeNimi4.github.io/KalaAI/esimene.html>siit</a></i>
+  </div>
   <script>var kord = 0;</script>
   <script>
     function vasta() {
