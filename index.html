@@ -21,8 +21,9 @@
         width: 100%;}
   	a {color: lightblue;}
     img {
-        transition: transform 2.5s;}
-    img:hover {transform: rotate(360deg); clip-path: circle(50%);}
+    	float: left;
+        transition: transform 2.5s; clip-path: circle(50%);}
+    img:hover {transform: rotate(360deg);}
     * {
         text-align: center;}
     b {
@@ -38,8 +39,8 @@
       background-color: black;
     }
     h2, h4 {
+    
         font-family: monospace;
-        text-align: center;
         color: white;}
     button {
         font-family: monospace;
@@ -62,7 +63,7 @@
   <title>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</title>
 </head>
 <body>
-  <img src="pildid/SuperAI.png" width=50 height=50 id="pilt">
+<img src="pildid/SuperAI.png" width=50 height=50 id="pilt">
   <h2 id='nimi'>SuperAI</h2>
   <h4>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</h4>
   <p id="tekst"></p>
