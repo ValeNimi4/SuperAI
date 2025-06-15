@@ -12,15 +12,17 @@
     	animation-name: kiri;
         animation-duration: 10s;
         animation-delay: 5s;
-        animation-iteration-count: infinite;}
+        animation-iteration-count: infinite;
+        }
+    
   	div {position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;}
   	a {color: lightblue;}
     img {
-        transition: width 5s, height 5s;}
-    img:hover {width: 200px; height: 200px}
+        transition: transform 2.5s;}
+    img:hover {transform: rotate(360deg); clip-path: circle(50%);}
     * {
         text-align: center;}
     b {
