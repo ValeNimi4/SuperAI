@@ -15,31 +15,30 @@
         animation-iteration-count: infinite;
         }
     
-  	div {position: fixed;
+  	.alumine {position: fixed;
         left: 0;
         bottom: 0;
-        width: 100%;}
+        width: 100%;
+        text-align: center;}
   	a {color: lightblue;}
     img {
     	float: left;
         transition: transform 2.5s; clip-path: circle(50%);}
     img:hover {transform: rotate(360deg);}
-    * {
-        text-align: center;}
-    b {
-    font-size: 20px;}
+    .suhtlus {
+    	margin: auto;
+        width: 50%}
     p {
-      color: lightgray;
+      color: white;
       font-family: monospace;
       font-size: 15px;
       transition: color 1s;
     }
-    p:hover {color: white;}
     body {
       background-color: black;
     }
     h2, h4 {
-    
+    	text-align: center;
         font-family: monospace;
         color: white;}
     button {
@@ -47,7 +46,7 @@
         color: black;
         background: lightgreen;
         transition: background 1s, color 1.5s;
-        border-radius: 25px;
+        border-radius: 5px;
         border-style: none;
 		}
     button:hover{background: blue; color: white}
@@ -56,9 +55,10 @@
         color: white;
         background: black;
         width: 80%;
-        border-radius: 25px;
+        border-radius: 5px;
         border-color: white;
         border-style: dotted;}
+   .sisestatu {background-color: lightblue; color:black; border-style: none; border-radius: 5px;}
   </style>
   <title>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</title>
 </head>
@@ -66,8 +66,8 @@
 <img src="pildid/SuperAI.png" width=50 height=50 id="pilt">
   <h2 id='nimi'>SuperAI</h2>
   <h4>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</h4>
-  <p id="tekst"></p>
-  <div>
+  <div class="suhtlus"><p id="tekst"></p></div>
+  <div class="alumine">
   <input id="sisestus">
   <button onclick='vasta();'>→</button><br>
     <i style='font-size: 12px; color: darkgrey;'>Tegi <a href='https://valeNimi4.github.io'>valeNimi4</a>. Copyleft🄯 valeNimi4 2024-2025. Originaalse AI leiate <a href=https://ValeNimi4.github.io/KalaAI/esimene.html>siit</a></i>
@@ -79,7 +79,7 @@
       kord++;
       document.getElementById('nimi').innerHTML = "KalaAI";
       document.getElementById('pilt').src = "pildid/KalaAI.png";
-      document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<br>' + document.getElementById('sisestus').value + '<br>';
+      document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<br><b class="sisestatu">' + document.getElementById('sisestus').value + '</b><br>';
       document.getElementById('sisestus').value = '';
       var a = Math.floor(Math.random() * 100);
       for (var i = 0; i < a; i++) {
