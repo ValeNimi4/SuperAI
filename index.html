@@ -3,14 +3,14 @@
 <head>
   <style>
 	button:active {color: black; background-color: red;}
-  	.alumine {position: fixed; left: 0;
+  	.alumine {position: fixed; left: 0; margin-bottom: 20px;
     	bottom: 0;
         width: 100%;
         text-align: center;}
   	a {color: lightblue;} 
     img {
     	float: left;
-        border-style: none;}
+        border-style: none; margin: 0 30px}
     .suhtlus {
     	margin: auto;
         width: 75%;
@@ -19,16 +19,15 @@
       color: white;
       font-family: monospace;
       font-size: 15px;
+      word-wrap: break-word;
     }
     body {
-      background-color: black;
-    }
-    .ulemine {top: 0; background-color: black;
-    	position: sticky;}
-    h2, h4 {
-    	text-align: right;
-        font-family: monospace;
-        color: white;}
+      background-color: black; margin: 0;
+    } html {scroll-behavior: smooth;}
+    .ulemine {z-index: 2;top: 0; background-color:black; border-style:solid;position: fixed; width: 100%; height:52.5px; border-width: 0px 0px 2.5px 0px; border-color: white;}   
+    h2{
+        font-family: monospace; font-size: 20px;
+        color: white; margin:0; padding: 15px;}
     button {
         font-family: monospace;
         color: black;
@@ -40,7 +39,9 @@
 		}
     b {  font-style: normal;
   font-weight: normal;}
-    h1 {font-family: monospace; color: white; padding: calc(50vh - 90px) 0; font-size: 30px;text-align: center;}
+  @keyframes ntend {from {opacity: 0;} to {opacity: 1}}
+    h1 {animation: ntend;   animation-duration: 1.5s;
+  animation-fill-mode: forwards; animation-delay: 1.5s;opacity: 0;font-family: monospace; color: white; background-image: linear-gradient(black, blue, black);padding: calc(50vh - 25px) 0; font-size: 30px;text-align: center;}
     button:hover{background: blue; color: white}
     input {
         font-family: monospace;
@@ -54,23 +55,19 @@
         border-style: solid none solid solid;}
    .sisestatu {background-color: #2a2a2a; color:white; border-style: none; border-radius: 10px; padding: 0 1rem; float: right;}
    #jaga {font-family: monospace;position: fixed; top: 0; margin-top: 30px; margin-left: calc(50% - 10rem);color: white; background-color: #2a2a2a; border-style: none; border-radius: 10px; padding: 0 1rem; text-position: center;}
-  html {
-  scroll-behavior: smooth;
-}
   </style>
-  <title>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</title>
+  <title>SuperAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="ulemine">
-<img src="pildid/SuperAI.png" width=50 height=50 id="pilt"><a id="jaga" onclick="navigator.clipboard.writeText('https://valenimi4.github.io/SuperAI/')">Kopeeri lehe aadress</a>
-  <h2 id='nimi'>SuperAI</h2>
-  <h4>Ilmselt kõige targem, loovam ja kiirem ai chatbot üldse!</h4></div>
-  <div class="suhtlus"><h1>Millega saan teid täna aidata?</h1><p id="tekst"></p></div>
+<img src="pildid/SuperAI.png" width=50 height=50 id="pilt">
+  <h2 id='nimi'>SuperAI</h2></div>
+  <h1>Millega saan teid täna aidata?</h1>
+  <div class="suhtlus"><p id="tekst"></p></div>
   <div class="alumine">
   <input id="sisestus">
-  <button onclick='vasta();'>→</button><br>
-    <i style='font-size: 12px; color: darkgrey;'>Tegi <a href='https://valeNimi4.github.io'>valeNimi4</a>. Copyleft🄯 valeNimi4 2024-2025. Originaalse AI leiate <a href=https://ValeNimi4.github.io/KalaAI/esimene.html>siit</a></i>
+  <button onclick='vasta();'>→</button>
   </div>
   <div id="all"></div>
   <script>var kord = 0;</script>
@@ -78,18 +75,20 @@
     function vasta() {
       if (kord == 0) {document.getElementById('tekst').innerHTML = "<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>";}
       kord++;
+      document.title = "KalaAI";
       document.getElementById('nimi').innerHTML = "KalaAI";
       document.getElementById('pilt').src = "pildid/KalaAI.png";
       document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<br><b class="sisestatu">' + document.getElementById('sisestus').value + '</b><br>';
       document.getElementById('sisestus').value = '';
       var a = Math.floor(Math.random() * 1000);
+      var mull = "";
       for (var i = 0; i < a; i++) {
          if (Math.floor(Math.random() * 2) == 1) {
-           var mull = "<b>mull </b>";} else {var mull = "<b>sulps </b>";}
+           mull += "<b>mull </b>";} else {mull += "<b>sulps </b>";}}
          document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + mull;
-               window.location.assign("#all");
-      }
-    }
+document.getElementById("all").scrollIntoView({ 
+  behavior: "smooth", // sujuv skroll
+  block: "start"})}
   </script>
 </body>
 </html>
