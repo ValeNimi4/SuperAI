@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html><head>
-  <style>a {color: black; font-family: Arial, sans-serif; background-color: lightgreen;}	button:active {color: black; background-color: red;}
-  	.alumine {background: black;border: solid 2px white; border-radius: 5px;position: fixed; left: 0; margin: 0 5%; margin-bottom: 10px;
+  <style>a {color: darkgray; font-family: Arial, sans-serif; font-size: 8px;}	button:active {color: black; background-color: red;}
+  	.alumine {background: black;outline: solid 2px white; border-radius:5px;
+    border-width: 0px;position: fixed; left: 0; margin: 0 5%; margin-bottom: 10px;
     	bottom: 0;
         width: 90%;
         text-align: right;}
@@ -23,7 +24,7 @@
       background-color: black; margin: 0;
     } html {scroll-behavior: smooth;}
     .ulemine {z-index: 2;top: 0; background-color:black; border-style:solid;position: fixed; width: 100%; height:52.5px; border-width: 0px 0px 2.5px 0px; border-color: white; margin-bottom: 60px;}   
-    h2{ m
+    h2{
         font-family: monospace; font-size: 20px;
         color: white; margin:0; padding: 15px;}
     button {
@@ -32,8 +33,9 @@
         color: black;
         background: lightgreen;
         transition: background 1s, color 1s;
-        border-radius: 5px 0 0 0;
+        border-radius: 0px;
         margin: 0;
+        outline-radius: 0px;
         border-style: none;
 		}
     b {  font-style: normal;
@@ -47,12 +49,11 @@
         font-family: monospace;
         color: white;
         background: black;
-        width: 80%;
+        width: calc(100% - 5rem);
         padding: 0 2px;
-        margin: 0; margin-right: 10%;
-        border-radius: 2px;
-        border-color: white;
-        border-style: none; border-style}
+        margin: 0;
+        border: 0;
+        border-radius: 0px;}
    .sisestatu {word-wrap: break-word; background-color: darkblue; color:white; border-style: none; border-radius: 5px; padding: 0 5px; float: right;}
    #jaga {font-family: monospace;position: fixed; top: 0; margin-top: 30px; margin-left: calc(50% - 10rem);color: white; background-color: #2a2a2a; border-style: none; border-radius: 10px; padding: 0 1rem; text-position: center;}</style>
   <title>SuperAI</title>
@@ -67,10 +68,10 @@
   <h1>Millega saan teid täna aidata?</h1>
   <div class="suhtlus"><p id="tekst"></p></div>
   <div class="alumine">
-  <input id="sisestus" placeholder="Küsi mida iganes..."><br>
+  <input id="sisestus" placeholder="Küsi mida iganes...">
   <button onclick="vasta();">Saada</button>
   </div>
-  <div id="all" style="color: white !important; font-size: 10px;"><a href="LICENSE">copyright valeNimi4 2025</a></div>
+  <div id="all"><a href="LICENSE">copyright valeNimi4 2025</a></div>
   <script>
   var kord = 0;
     function vasta() {
