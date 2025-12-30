@@ -77,13 +77,12 @@
   <script>
   var kord = 0;
     function vasta() {
-      if (kord == 0) {document.getElementById('tekst').innerHTML = "<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>";
+      if (kord == 0) {document.getElementById('tekst').innerHTML = "<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>";}
             document.title = "KalaAI";
 	  document.body.style.backgroundImage = "none";
       document.getElementsByTagName("h1")[0].style.display = "none";
 	  document.getElementById('alumineriba').style.position = "fixed";
-      document.getElementById('pilt').src = "pildid/KalaAI.svg"
-}
+      document.getElementById('pilt').src = "pildid/KalaAI.svg";
       kord++;
       document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<br><b class="sisestatu">' + document.getElementById('sisestus').value + '</b><br>';
       document.getElementById('sisestus').value = '';
