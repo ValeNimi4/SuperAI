@@ -67,17 +67,42 @@
 <a href="/" class="vasak"><img src="/logo.svg" height="50"></a>
 <img class="parem" src="pildid/SuperAI.svg" height="50" width="100" height="50" id="pilt">
 </a></span></div>
-  <h1>Terekest! Millega saan teid täna aidata?</h1>
+  <h1>Terekest! Millega saan teid täna aidata? ‼️Toimub lehe uuendamine‼️</h1>
   <div class="alumine" id="alumineriba">
   <input id="sisestus" placeholder="Vastan hea meelega Su 1. küsimusele">
   <button onclick="vasta();">&rarr;</button>
   </div>
   <div class="suhtlus"><p id="tekst"></p></div>
   <div id="all"><a href="LICENSE">copyright valeNimi4 2025</a></div>
-  <script>
+  <script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js"
+const s = createClient("https://iqrrffhjxakqvlshonbr.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxcnJmZmhqeGFrcXZsc2hvbmJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNTAxMzgsImV4cCI6MjA3NTkyNjEzOH0.kqOJ9Ui08Z8dXLGSE3dKXRl436_OKkqli3hbTrQAufA")
+function meeldib() {
+	if (prompt("Kas sulle meeldib KalaAI?")) {
+	const { error } = await supabase
+  .from('kalaai_head')
+  .insert({
+  });
+	const { count, error } = await supabase
+  .from('kalaai_head')
+  .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`}} else {if (prompt("Kas sulle ei meeldi KalaAI?")) {
+	const { error } = await supabase
+  .from('kalaai_kehvad')
+  .insert({
+  }); const { count, error } = await supabase
+  .from('kalaai_kehvad')
+  .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)} else {alert("Hinnangut ei antud")}}}
+		
+
+if (error) {
+  console.error(error)
+}
   var kord = 0;
     function vasta() {
-      if (kord == 0) {document.getElementById('tekst').innerHTML = "<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>";}
+      if (kord == 0) {document.getElementById('tekst').innerHTML = '<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>'; setTimeout(() => {
+  meeldib();
+}, 10000); // 10 sekundit
+}
             document.title = "KalaAI";
 	  document.body.style.backgroundImage = "none";
       document.getElementsByTagName("h1")[0].style.display = "none";
