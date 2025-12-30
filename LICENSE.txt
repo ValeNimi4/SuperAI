@@ -1,4 +1,4 @@
-Kui nõustud et sulle (ei) meeldi(b) SuperAI/KalaAI talletatakse see info, kas sulle meeldib ja millal hinnati mu supabase tabelisse. Meeldimiste/mittemeeldimiste arv näidatakse inimestele. Sinu isikuandmeid ei koguta lehel SuperAI
+Kui nõustud et sulle (ei) meeldi(b) SuperAI/KalaAI talletatakse see info, kas sulle meeldib ja millal hinnati mu supabase tabelisse. Meeldimiste/mittemeeldimiste arv näidatakse inimestele. Sinu isikuandmeid ei koguta lehel SuperAI. Küpsistena salvestatakse Sinu hinnang et rohkem ei küsitaks, kas Sulle meeldib
 
 
 
