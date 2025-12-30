@@ -1,3 +1,7 @@
+Kui nõustud et sulle (ei) meeldi(b) SuperAI/KalaAI talletatakse see info, kas sulle meeldib ja millal hinnati mu supabase tabelisse. Meeldimiste/mittemeeldimiste arv näidatakse inimestele. Sinu isikuandmeid ei koguta lehel SuperAI
+
+
+
 Copyright (C) 2025 ValeNimi4
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
