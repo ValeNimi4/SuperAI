@@ -79,10 +79,10 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js"
 const s = createClient("https://iqrrffhjxakqvlshonbr.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxcnJmZmhqeGFrcXZsc2hvbmJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNTAxMzgsImV4cCI6MjA3NTkyNjEzOH0.kqOJ9Ui08Z8dXLGSE3dKXRl436_OKkqli3hbTrQAufA");
 async function meeldib() {
 	if (prompt("Kas sulle meeldib KalaAI?")) {
-	const { error } = await s
+	const { error1 } = await s
   .from('kalaai_head')
   .insert({
-  });
+  }); console.log(error1)
 	const { count, error } = await s
   .from('kalaai_head')
   .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`}} else {if (prompt("Kas sulle ei meeldi KalaAI?")) {
