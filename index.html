@@ -85,7 +85,7 @@ async function meeldib() {
   });
 	const { count, error2 } = await s
   .from('kalaai_head')
-  .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)}} else {if (prompt("Kas sulle ei meeldi KalaAI?")) {
+  .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)} else {if (prompt("Kas sulle ei meeldi KalaAI?")) {
 	const { error } = await s
   .from('kalaai_kehvad')
   .insert({
