@@ -77,7 +77,7 @@
   <script type="module">
 import { createClient } from "https://esm.sh/@supabase/supabase-js"
 const s = createClient("https://iqrrffhjxakqvlshonbr.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxcnJmZmhqeGFrcXZsc2hvbmJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNTAxMzgsImV4cCI6MjA3NTkyNjEzOH0.kqOJ9Ui08Z8dXLGSE3dKXRl436_OKkqli3hbTrQAufA");
-async function meeldib() { if (document.cookie) {
+async function meeldib() { if (document.cookie || document.cookie != "") {
 	if (confirm("Kas sulle meeldib KalaAI?")) {
 			document.cookie = "vastus=meeldib; max-age=31536000;";
 	const { error1 } = await s
