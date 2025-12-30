@@ -86,7 +86,7 @@ async function meeldib() {
 	const { count, error2 } = await s
   .from('kalaai_head')
   .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)} else {if (confirm("Kas sulle ei meeldi KalaAI?")) {
-	const { error } = await s
+	const { error1 } = await s
   .from('kalaai_kehvad')
   .insert({
   }); const { count, error2 } = await s
@@ -98,9 +98,10 @@ async function meeldib() {
 document.getElementById('vasta').addEventListener("click", () => {
       if (kord == 0) {document.getElementById('tekst').innerHTML = '<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>'; setTimeout(() => {
   meeldib();
-}, 10000); // 10 sekundit
+}, 5000); // 10 sekundit
 }
             document.title = "KalaAI";
+	       document.body.style.overflow = "auto";
 	  document.body.style.backgroundImage = "none";
       document.getElementsByTagName("h1")[0].style.display = "none";
 	  document.getElementById('alumineriba').style.position = "fixed";
