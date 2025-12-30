@@ -70,7 +70,7 @@
   <h1>Terekest! Millega saan teid täna aidata? ‼️Toimub lehe uuendamine‼️</h1>
   <div class="alumine" id="alumineriba">
   <input id="sisestus" placeholder="Vastan hea meelega Su 1. küsimusele">
-  <button onclick="vasta();">&rarr;</button>
+  <button id="vasta">&rarr;</button>
   </div>
   <div class="suhtlus"><p id="tekst"></p></div>
   <div id="all"><a href="LICENSE">copyright valeNimi4 2025</a></div>
@@ -95,7 +95,7 @@ async function meeldib() {
 		
 
   var kord = 0;
-    function vasta() {
+document.getElementById('vasta').addEventListener("click", () => {
       if (kord == 0) {document.getElementById('tekst').innerHTML = '<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>'; setTimeout(() => {
   meeldib();
 }, 10000); // 10 sekundit
@@ -117,6 +117,6 @@ async function meeldib() {
          document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + mull;
 document.getElementById("all").scrollIntoView({ 
   behavior: "smooth", // sujuv skroll
-  block: "start"})}
+  block: "start"})})
   </script>
 </body></html>
