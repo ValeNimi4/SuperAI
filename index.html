@@ -77,19 +77,19 @@
   <script type="module">
 import { createClient } from "https://esm.sh/@supabase/supabase-js"
 const s = createClient("https://iqrrffhjxakqvlshonbr.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxcnJmZmhqeGFrcXZsc2hvbmJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNTAxMzgsImV4cCI6MjA3NTkyNjEzOH0.kqOJ9Ui08Z8dXLGSE3dKXRl436_OKkqli3hbTrQAufA")
-function meeldib() {
+async function meeldib() {
 	if (prompt("Kas sulle meeldib KalaAI?")) {
-	const { error } = await supabase
+	const { error } = await s
   .from('kalaai_head')
   .insert({
   });
-	const { count, error } = await supabase
+	const { count, error } = await s
   .from('kalaai_head')
   .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`}} else {if (prompt("Kas sulle ei meeldi KalaAI?")) {
-	const { error } = await supabase
+	const { error } = await s
   .from('kalaai_kehvad')
   .insert({
-  }); const { count, error } = await supabase
+  }); const { count, error } = await s
   .from('kalaai_kehvad')
   .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)} else {alert("Hinnangut ei antud")}}}
 		
