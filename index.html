@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html><head>
-  <style>a {color: darkgray; font-family: Arial, sans-serif; font-size: 8px;}	button:active {color: black; background-color: red;}
+  <style>
+	  .vasak {float: left;}
+	  .parem {float: right}
+	  a {color: darkgray; font-family: Arial, sans-serif; font-size: 8px;}	button:active {color: black; background-color: red;}
   	.alumine {background: black;outline: solid 2px white; border-radius:5px;
-    border-width: 0px;position: fixed; left: 0; margin: 0 5%; margin-bottom: 10px;
+    border-width: 0px; left: 0; margin: 0 5%; margin-bottom: 10px;
     	bottom: 0;
         width: 90%;
         text-align: right;}
@@ -21,7 +24,7 @@
 	  margin-top: 53px;
     }
     body {
-      background-color: black; margin: 0;
+      background-color: black; background-image: linear-gradient(30deg, black, darkblue); margin: 0;
     } html {scroll-behavior: smooth;}
     .ulemine {z-index: 2;top: 0; background-color:black; border-style:solid;position: fixed; width: 100%; height:52.5px; border-width: 0px 0px 2.5px 0px; border-color: white; margin-bottom: 60px;}   
     h2{
@@ -39,10 +42,9 @@
         border-style: none;
 		}
     b {  font-style: normal;
-  font-weight: normal;}
+  font-weight: normal; animation: ntend 1s}
   @keyframes ntend {from {opacity: 0;} to {opacity: 1}}
-    h1 {animation: ntend;   animation-duration: 1.5s;
-  animation-fill-mode: forwards; animation-delay: 1.5s;opacity: 0;font-family: monospace; color: white; background-image: linear-gradient(black, blue, black);padding: calc(50vh - 25px) 0; font-size: 30px;text-align: center;}
+    h1 {font-family: monospace; color: white; padding: 0; font-size: 30px;text-align: center; margin: 20px; font-weight: normal;}
     button:hover{background: darkblue; color: white}
     input {
 		outline: none;
@@ -54,23 +56,22 @@
         margin: 0;
         border: 0;
         border-radius: 0px;}
-   .sisestatu {word-wrap: break-word; background-color: darkblue; color:white; border-style: none; border-radius: 5px; padding: 0 5px; float: right;}
+   .sisestatu {word-wrap: break-word; background-color: darkblue; color:white; border-style: none; border-radius: 5px; padding: 0 5px; float: right; animation: ntend 1s}
    #jaga {font-family: monospace;position: fixed; top: 0; margin-top: 30px; margin-left: calc(50% - 10rem);color: white; background-color: #2a2a2a; border-style: none; border-radius: 10px; padding: 0 1rem; text-position: center;}</style>
   <title>SuperAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="ulemine">
-<a href="/">
-<img src="pildid/SuperAI.png" width="100" height="50" id="pilt">
-</a>
-  <h2 id="nimi" style="visibility: hidden">SuperAI</h2></div>
-  <h1>Millega saan teid täna aidata?</h1>
-  <div class="suhtlus"><p id="tekst"></p></div>
-  <div class="alumine">
+<div class="ulemine"><span>
+<a href="/" class="vasak"><img src="/logo.svg"></a>
+<img class="parem" src="pildid/SuperAI.png" width="100" height="50" id="pilt">
+</a></span>
+  <h1>Millega saan teid täna aidata?</h1><br>
+  <div class="alumine" id="alumineriba">
   <input id="sisestus" placeholder="Küsi mida iganes...">
   <button onclick="vasta();">Saada</button>
   </div>
+  <div class="suhtlus"><p id="tekst"></p></div>
   <div id="all"><a href="LICENSE">copyright valeNimi4 2025</a></div>
   <script>
   var kord = 0;
@@ -78,11 +79,13 @@
       if (kord == 0) {document.getElementById('tekst').innerHTML = "<i>(Moondumine KalaAI-ks lõpule viidud)</i><br><br>"; document.getElementsByTagName("h1")[0].style.padding="0px"; document.getElementsByTagName("h1")[0].style.height="0vh"; document.getElementsByTagName("h1")[0].style.visibility = "hidden";}
       kord++;
       document.title = "KalaAI";
+	  document.body.style.backgroundImage = "none";
+	  document.getElementById('alumineriba').position = "fixed";
       document.getElementById('nimi').innerHTML = "KalaAI";
       document.getElementById('pilt').src = "pildid/KalaAI.png";
       document.getElementById('tekst').innerHTML = document.getElementById('tekst').innerHTML + '<br><b class="sisestatu">' + document.getElementById('sisestus').value + '</b><br>';
       document.getElementById('sisestus').value = '';
-      var a = Math.floor(Math.random() * 1000);
+      var a = Math.floor(Math.random() * 1000) + 1;
       var mull = "";
       for (var i = 0; i < a; i++) {
          if (Math.floor(Math.random() * 2) == 1) {
@@ -92,6 +95,4 @@ document.getElementById("all").scrollIntoView({
   behavior: "smooth", // sujuv skroll
   block: "start"})}
   </script>
-
-
 </body></html>
