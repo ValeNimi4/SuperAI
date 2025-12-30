@@ -82,14 +82,14 @@ async function meeldib() {
 	const { error1 } = await s
   .from('kalaai_head')
   .insert({
-  }); console.log(error1)
-	const { count, error } = await s
+  });
+	const { count, error2 } = await s
   .from('kalaai_head')
   .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)}} else {if (prompt("Kas sulle ei meeldi KalaAI?")) {
 	const { error } = await s
   .from('kalaai_kehvad')
   .insert({
-  }); const { count, error } = await s
+  }); const { count, error2 } = await s
   .from('kalaai_kehvad')
   .select('*', { count: 'exact', head: true }); alert(`nii avab ${count} inimest`)} else {alert("Hinnangut ei antud")}}}
 		
