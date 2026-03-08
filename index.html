@@ -190,6 +190,9 @@ sisestus.addEventListener("keydown", (e) => {
 		heli.onended = resolve;
 	});
 	}
+	function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
     var vasta = async () => {
       if (kord == 0) {document.getElementById('tekst').innerHTML += '<br><div class="vastus"><i>(Moondumine KalaAI-ks lõpule viidud)</i></div><br>';
       document.title = "KalaAI";
@@ -208,6 +211,7 @@ sisestus.addEventListener("keydown", (e) => {
       for (var i = 0; i < a; i++) {
          if (Math.floor(Math.random() * 2) == 1) {
            mull.push("mull ");} else {mull.push("sulps ");}}
+	  sleep(2000);
 	  document.getElementById('tekst').innerHTML += '<div class="vastus">' +
 	  pane(mull.join("")+emojid[Math.floor(Math.random() * emojid.length)]) + "<br>";
       document.getElementById("tegi").scrollIntoView({behavior: "smooth", block: "start"});
