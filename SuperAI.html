@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    img {
+        transition: width 5s, height 5s; height: 13px;}
+    .kysimus {
+		text-align: left;
+		float: right;
+		background-color: darkblue;
+		padding: 5px;
+		margin: 10px;
+		border-radius: 5px;
+		color: white;
+		font-family: monospace;
+		font-size: 13px;
+	}
+    .vastus {
+		text-align: left;
+		color: white;
+		font-family: monospace;
+		font-size: 13px;
+		float: left;
+		background-color: black;
+		padding: 5px;
+		margin: 10px;
+		border-radius: 5px;
+	}
+    .p {
+	  overflow: auto;
+	  height: auto;
+	  margin: 20px;
+	  margin-top: 70px;
+	  margin-bottom: 70px;
+	  text-align: center;
+    }
+	label {
+      color: white;
+	  font-size: 13px;
+      font-family: monospace;
+	  float: right;
+	  }
+    body {
+      background-color: black;
+	  background-image: url("supertaust.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+    }
+    #kirjeldus {
+		float: none;
+		font-size: 40px;
+		text-align: center;
+		display: inline-block;
+		margin: auto;
+		width: auto;
+		margin: 45px 0px;
+		background-color: transparent;
+		}
+	.alumine {display: flex; background: black;outline: solid 2px white; border-radius:5px;
+    border-width: 0px; left: 0; margin: 0 5%; margin-bottom: 10px;
+    	bottom: 0;
+        width: 90%;  flex-direction: row;  align-items: center;
+}
+    button {
+    	all: unset; 
+        font-family: monospace;
+        color: black;
+        background: lightgreen;
+        transition: background 0.5s, color 0.5s;
+        border-radius: 0px;
+        margin: 0;
+        font-size: 12px;
+        border-style: none;
+        padding: 5px;
+		}
+    button:hover {background-color: darkblue; color: white;}
+#sisestus {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: plaintext;
+
+  outline: none;
+  flex: 1;
+
+  font-family: monospace;
+  color: white;
+  background: black;
+  font-size: 12px;
+
+  padding: 2px;
+  margin: 0 5px;
+  border: 0;
+white-space: pre-wrap;
+word-break: break-word;  flex: 1;
+  min-width: 0;
+
+}
+* {color: white;}
+	.span {position: fixed; top: 0; left: 0; background: black; width: 100%; display: block; height: 50px;}
+	#heli {float: right; margin: 0; width: auto;}
+	#tekst {display: none}
+
+  </style>
+  <title>SuperAI</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <div class="span"><img src="SuperAI.svg" style="position: fixed; top: 0; left: 0;width: 50px; height: 50px;" id="pilt">
+  <input id="heli" type="checkbox" onclick="sisse()"><label for="heli">
+  Loe vastus ette</label></div>
+  <div id="TIITEL" class="p"><div id="kirjeldus" class="vastus"><b>Kuidas saan teil täna abiks olla?</b></div></div>
+  <div id="tekst" class="p"></div>
+  <div class="alumine" id="alumineriba">  <button id="nupuke">+</button><div id="lisa" style="display: none">
+  <a onclick="format('italic')"><i>i </i></a>
+  <a onclick="format('bold')"><b>b </b></a></div>
+  <div contenteditable="true" id="sisestus"></div>
+  <button id="vasta" onclick="vasta()">&rarr;</button>
+  </div>
+  <i style='font-size: 12px; color: darkgrey;' id="tegi">Tegi <a href='https://valeNimi4.github.io'>valeNimi4</a>. Copyleft🄯 valeNimi4 2025-2026. Originaalse AI leiate <a href=https://ValeNimi4.github.io/KalaAI/esimene.html>siit</a></i>
+  <script>var kord = 0;</script>
+  <script>
+  var formatting = false;
+  function saveS() {
+  const sel = window.getSelection();
+  return sel.rangeCount ? sel.getRangeAt(0) : null;
+}
+
+function restoreS(range) {
+  if (!range) return;
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+  function format(command) {formatting = true;
+    saveS();
+    document.getElementById("sisestus").focus();
+  document.execCommand(command, false, null);
+  restoreS();
+    cursorLoppu(document.getElementById("sisestus"));formatting = false;
+	
+};
+  var ntnupukest = false;
+  document.getElementById("nupuke").onclick = () => {ntnupukest = !ntnupukest; if (ntnupukest) {document.getElementById("lisa").style.display="block"}
+  else {document.getElementById("lisa").style.display="none"}}
+  function cursorLoppu(el) {
+  const range = document.createRange();
+  const sel = window.getSelection();
+
+  range.selectNodeContents(el);
+  range.collapse(false); // false = lõpp
+
+  sel.removeAllRanges();
+  sel.addRange(range);
+};
+  function format(command) {
+    saveS();
+    document.getElementById("sisestus").focus();
+  document.execCommand(command, false, null);
+  restoreS()
+};
+sisestus.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault(); // takistab uut rida
+    vasta();
+  }
+});
+    var emojid = ["🙂", "😂", "😐", "😇", "😀", "😕"];
+	for (const emoji of emojid) {document.getElementById("lisa").innerHTML += 
+	`<a onclick="document.getElementById('sisestus').innerHTML += pane('${emoji}')">${pane(emoji)}</a> `;}
+	function pane(tekst) {
+		var emojidega = tekst.replaceAll("🙂", '<img src="kartulEMOJI/naeratus.svg">').replaceAll("😀", '<img src="kartulEMOJI/suurnaeratus.svg">')
+		.replaceAll("😕", '<img src="kartulEMOJI/kurb.svg">').replaceAll("😇", '<img src="kartulEMOJI/rongaga.svg">')
+		.replaceAll("😐", '<img src="kartulEMOJI/neutraalne.svg">').replaceAll("😂", '<img src="kartulEMOJI/naermine.svg">');
+		return emojidega;}
+	var helisees = false;
+
+	document.getElementById("sisestus").oninput = () => {if (!formatting) {
+	document.getElementById("sisestus").innerHTML = pane(document.getElementById("sisestus").innerHTML);
+	cursorLoppu(document.getElementById("sisestus"))}}
+    function sisse() {helisees = !helisees;}
+	async function mangiHeli(src) {
+		return new Promise(resolve => {
+		const heli = new Audio(src);
+		heli.playbackRate = 3
+		heli.play();
+		heli.onended = resolve;
+	});
+	}
+    var vasta = async () => {
+      if (kord == 0) {document.getElementById('tekst').innerHTML += '<br><div class="vastus"><i>(Moondumine KalaAI-ks lõpule viidud)</i></div><br>';
+      document.title = "KalaAI";
+	  document.getElementById("TIITEL").style.display = "none";
+	  document.getElementById("tekst").style.display = "block";
+      document.getElementById('pilt').src = "KalaAI.svg";
+	  document.getElementById("alumineriba").style.position = "fixed";
+	  document.body.style.backgroundImage = 'url("taustapilt.jpg")'}
+      document.getElementById('tekst').innerHTML += '<div class="kysimus">' + pane(document.getElementById('sisestus').innerHTML) + '</div><br>';
+      document.getElementById('sisestus').innerHTML = '';
+	  
+	  kord++;
+
+      var a = Math.floor(Math.random() * 1100) + 100;
+      var mull = [];
+      for (var i = 0; i < a; i++) {
+         if (Math.floor(Math.random() * 2) == 1) {
+           mull.push("mull ");} else {mull.push("sulps ");}}
+	  document.getElementById('tekst').innerHTML += '<div class="vastus">' +
+	  pane(mull.join("")+emojid[Math.floor(Math.random() * emojid.length)]) + "<br>";
+      document.getElementById("tegi").scrollIntoView({behavior: "smooth", block: "start"});
+
+	  if (helisees) {for (const haal of mull) {await mangiHeli(haal.slice(0,-1)+".mp3")}};
+    }
+  </script>
+</body>
+</html>
